@@ -20,11 +20,12 @@ class AbilityScoreBox extends Component{
     }
 
     ProficiencyChange(skillName){
-        console.log(this.state);
+        //Called in Skill.js on checkbox click, inverts the proficient prop and re renders the card.
         for (var i=0; i<this.state.skills.length; i++){
             if (this.state.skills[i].name == skillName){
-                this.setState({})// this.state.skills[i].proficient = !this.state.skills.proficient;
-                console.log("changing", this.state);
+                var temp = this.state.skills[i];
+                temp.proficient = temp.proficient? false:true;
+                this.setState(temp);
             }
         }
         return 

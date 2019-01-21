@@ -4,6 +4,8 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Counter } from './components/Counter';
+import {AbilityScoreBox} from './components/AbilityScoreBox';
+import { SkillContainer } from './containers/SkillContainer';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -14,7 +16,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/combat' component={Counter} />
         <Route path='/magic' component={FetchData} />
-        <Route path='/inventory' component={FetchData} />
+        <Route path='/inventory' component={SkillContainer} />
       </Layout>
     );
   }
