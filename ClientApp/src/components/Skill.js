@@ -10,6 +10,7 @@ export class Skill extends Component{
                 <input
                     type="checkbox"
                     value="Proficiency"
+                    checked={this.props.proficient}
                     onChange = {() => this.props.handleClick(this.props.name)}
                 ></input>
                 {this.props.name} {this.props.score}
