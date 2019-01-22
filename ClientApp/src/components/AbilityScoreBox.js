@@ -23,11 +23,13 @@ class AbilityScoreBox extends Component{
         //Called in Skill.js on checkbox click, inverts the proficient prop and re renders the card.
         for (var i=0; i<this.state.skills.length; i++){
             if (this.state.skills[i].name == skillName){
-                var temp = this.state.skills[i];
-                temp.proficient = temp.proficient? false:true;
+                var temp = this.state.skills;
+                temp[i].proficient = !temp[i].proficient;
+                console.log(temp);
+                //temp.proficient = temp.proficient? false:true;
                 this.setState(temp);
             }
-        }
+        } 
         return 
     }
 
@@ -40,7 +42,7 @@ class AbilityScoreBox extends Component{
                     Raw Score: {this.state.score} MAYBE LET USER EDIT<br />
                     Modifier: {}
                 </label>                   
-                {this.state.skills.map((skill, i) => <Skill name={skill.name} score={this.GetModifier(skill.proficient)} handleClick = {this.ProficiencyChange} key={i} />)}      
+                {this.state.skills.map((skill, i) => <Skill name={skill.name} score={this.GetModifier(skill.proficient)} handleClick = {this.ProficiencyChange} key={i} proficient={skill.proficient}/>)}      
             </div>
        )
    }
