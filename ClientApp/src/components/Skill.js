@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import './Skill.css';
 export class Skill extends Component{
 
     render() {
         return(
-            <div>
+            <div className="skill">
             <label>
                 <input
                     type="checkbox"
