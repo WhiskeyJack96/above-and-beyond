@@ -1,0 +1,15 @@
+.card {
+    border-top: 6px solid lightskyblue;
+    text-indent: 0.5ex;
+    background-color: rgba(191, 191, 191, 0.671);
+  }
+
+.skill {
+    text-indent: 1ex;
+  }
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+}
