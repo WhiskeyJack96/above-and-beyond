@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Skill} from './Skill';
-
+import './Skill.css';
 class AbilityScoreBox extends Component{
     constructor(props){
         super(props);
@@ -26,7 +26,6 @@ class AbilityScoreBox extends Component{
                 var temp = this.state.skills;
                 temp[i].proficient = !temp[i].proficient;
                 console.log(temp);
-                //temp.proficient = temp.proficient? false:true;
                 this.setState(temp);
             }
         } 
@@ -35,14 +34,16 @@ class AbilityScoreBox extends Component{
 
    render(){
        return(
-            <div>
+            <div className ="card">
+                    <strong>{this.state.name}</strong><br />
                 <label>
-                    <input type="checkbox" value="Proficiency"/>
-                    {this.state.name}<br />
-                    Raw Score: {this.state.score} MAYBE LET USER EDIT<br />
-                    Modifier: {}
-                </label>                   
-                {this.state.skills.map((skill, i) => <Skill name={skill.name} score={this.GetModifier(skill.proficient)} handleClick = {this.ProficiencyChange} key={i} proficient={skill.proficient}/>)}      
+                    Raw Score: {this.state.score}
+                </label>    
+                <label>
+                    Modifier: {this.modifier}
+                </label>                      
+                {this.state.skills.map((skill, i) => <Skill name={skill.name} score={this.GetModifier(skill.proficient)} handleClick = {this.ProficiencyChange} key={i} proficient={skill.proficient}/>)}         
+            <br />
             </div>
        )
    }
