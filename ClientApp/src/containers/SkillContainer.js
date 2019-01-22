@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {AbilityScoreBox} from '../components/AbilityScoreBox';
+import '../components/Skill.css';
 
 const proficiencyBonus = 3;
 const AbilityScoreInfo = [{name: 'Strength', score: 9, skills: [{name: 'Saving Throw', proficient: false}, {name: 'Athletics', proficient:true}] },
@@ -25,7 +26,7 @@ export class SkillContainer extends Component {
 
     render () {
         return ( 
-        <div>
+        <div className='container'>
             {this.state.AbilityScoreInfo.map((attribute, i) => <AbilityScoreBox {...attribute} proficiencyBonus={proficiencyBonus} rawToModifierConverter={this.RawToModifierConverter} key={i} />)}
         </div>
         );
