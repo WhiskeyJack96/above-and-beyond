@@ -24,6 +24,7 @@ export class SkillContainer extends Component {
         return Math.floor((score-10)/2); 
     }
 
+
     render () {
         return ( 
         <div className='container'>
